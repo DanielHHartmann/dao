@@ -1,10 +1,14 @@
 package model.dao;
 
 import db.DB;
-import model.dao.impl.TesteDaoJDBC;
+
+import model.dao.impl.ItemDaoJDBC;
+
 
 public class DaoFactory {
-	public static TesteDao createTesteDao() {
-		return new TesteDaoJDBC(DB.getConnection());
+
+	public static ItemDao createItemDao() {
+		return new ItemDaoJDBC(DB.getConnection());
 	}
+
 }
