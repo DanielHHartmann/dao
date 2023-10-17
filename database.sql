@@ -1,0 +1,58 @@
+CREATE DATABASE ilha3;
+USE ilha3;
+
+CREATE TABLE usuario(
+	Id  INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+    Nome VARCHAR(50) NOT NULL,
+    Sobrenome VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Senha VARCHAR(50) NOT NULL
+
+);
+
+CREATE TABLE emprestimo(
+	Id  INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+	Entidade VARCHAR(50) NOT NULL,
+    Lugar VARCHAR(50) NOT NULL,
+    Estado VARCHAR(50) NOT NULL,
+    DataEmprestimo DATE NOT NULL,
+    DataDevolucao DATE
+);
+
+CREATE TABLE historico(
+	Id  INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+	Entidade VARCHAR(50) NOT NULL,
+    Acao VARCHAR(50) NOT NULL,
+    DataHistorico DATE NOT NULL,
+    Hora TIME
+
+);
+
+CREATE TABLE anexos(
+	Id  INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+    Nome VARCHAR(50) NOT NULL,
+	Anexo VARCHAR(250) NOT NULL,
+    Descricao VARCHAR(250) NOT NULL
+	
+);
+
+CREATE TABLE item(
+	Id  INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+	Descricao VARCHAR(250) NOT NULL,
+    Categoria VARCHAR(50) NOT NULL,
+    Marca VARCHAR(50) NOT NULL,
+    Modelo VARCHAR(50) NOT NULL,
+    NumeroSerie VARCHAR(50) NOT NULL,
+    Potencia VARCHAR(50) NOT NULL,
+    Localizacao VARCHAR(100) NOT NULL,
+    Enviado VARCHAR(3) NOT NULL,
+    NotaFiscal VARCHAR(6) NOT NULL,
+    DataEntrada DATE NOT NULL, 
+    UltimaQualificacao DATE NOT NULL, 
+    ProximaQualifacao DATE NOT NULL
+);
